@@ -1,3 +1,4 @@
+import 'package:bookly/core/utilis/Styels.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/CustomAppBar.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/HomeItemslistView.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +12,17 @@ class HomeBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomAppBar(),
           ItemsListView(),
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            "Best seller ",
+            style: Styels.mediumTitle,
+          )
         ],
       ),
     );
