@@ -1,6 +1,4 @@
-import 'package:bookly/core/utilis/assets.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/CustomAppBar.dart';
-import 'package:bookly/feature/home/presentation/views/widgets/HomeItem%20copy.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/HomeItemslistView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
