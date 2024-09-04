@@ -1,4 +1,4 @@
-import 'package:bookly/feature/home/presentation/views/widgets/HomeItem%20copy.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/HomeItem.dart';
 import 'package:flutter/material.dart';
 
 class ItemsListView extends StatelessWidget {
