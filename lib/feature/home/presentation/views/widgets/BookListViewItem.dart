@@ -6,8 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
