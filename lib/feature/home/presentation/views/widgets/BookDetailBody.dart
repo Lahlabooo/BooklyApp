@@ -2,7 +2,7 @@ import 'package:bookly/core/utilis/Styels.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/BookingRating.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/BooksAction.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/CustomBookDetailAppBar.dart';
-import 'package:bookly/feature/home/presentation/views/widgets/CustomButton.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/SimiliarBooksSection.dart';
 import 'package:flutter/material.dart';
 import 'CustomBookImage.dart';
 
@@ -17,7 +17,11 @@ class BookDetailBody extends StatelessWidget {
         const SizedBox(
           height: 50,
         ),
-        const CusstomBookImage(),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * .25),
+          child: const CustomBookImage(),
+        ),
         const SizedBox(
           height: 30,
         ),
@@ -50,6 +54,10 @@ class BookDetailBody extends StatelessWidget {
           height: 30,
         ),
         const BooksAction(),
+        const SizedBox(
+          height: 50,
+        ),
+        const SimiliarBooksSection(),
       ],
     );
   }
