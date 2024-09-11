@@ -9,10 +9,11 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl(this.apiServer);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
     try {
       var data = await apiServer.Get(
-          endPoint: 'volumes?Filtering=free-ebooks&q=programming');
+          endPoint:
+              'volumes?Filtering=free-ebooks&q=programming&Sorting =newst');
       List<BookModel> books = [];
 
       for (var element in data['items']) {
@@ -25,7 +26,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
     // TODO: implement fetchNewsetBooks
     throw UnimplementedError();
   }
