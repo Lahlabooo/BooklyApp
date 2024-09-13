@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
-  final ApiServer apiServer;
+  final ApiService apiServer;
 
   HomeRepoImpl(this.apiServer);
   @override
