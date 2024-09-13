@@ -1,6 +1,5 @@
 import 'package:bookly/core/utilis/Styels.dart';
 import 'package:bookly/feature/Search/presentation/views/widgets/Custom_search-TextField.dart';
-import 'package:bookly/feature/home/presentation/views/widgets/BookListViewItem.dart';
 import 'package:flutter/material.dart';
 
 class SearchBody extends StatelessWidget {
@@ -42,9 +41,12 @@ class SearchResultListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
         return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(),
-        );
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: SizedBox(
+              height: 20,
+              child: Text("data"),
+            ) //BookListViewItem(book: ,),
+            );
       },
     );
   }

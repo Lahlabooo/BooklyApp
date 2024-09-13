@@ -1,4 +1,5 @@
-import 'package:bookly/core/utilis/Styels.dart';
+import 'package:bookly/core/Widgets/CustomLoadingIndicator.dart';
+import 'package:bookly/core/Widgets/customErrorWidget.dart';
 import 'package:bookly/feature/home/presentation/Manager/featuredBooksCubit/FeaturedBooksCubit.dart';
 import 'package:bookly/feature/home/presentation/Manager/featuredBooksCubit/FeaturedBooksStates.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/HomeItem.dart';
@@ -32,16 +33,11 @@ class ItemsListView extends StatelessWidget {
           ),
         );
       } else if (state is FeaturedBooksFailure) {
-        return Center(
-          child: Text(
-            state.errMessage,
-            style: Styels.textStyle20,
-          ),
+        return CustomErrorWidget(
+          errMessage: state.errMessage,
         );
       } else {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const CustomLoadingIndicator();
       }
     });
   }
