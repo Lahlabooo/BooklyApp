@@ -20,7 +20,7 @@ class ItemsListView extends StatelessWidget {
         return Skeletonizer(
           enabled: false,
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * .30,
+            height: MediaQuery.of(context).size.height * .28,
             child: ListView.builder(
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,

@@ -2,7 +2,7 @@ import 'package:bookly/constants.dart';
 import 'package:bookly/core/utilis/Styels.dart';
 import 'package:bookly/feature/home/data/Models/book_model/book_model.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/BookingRating.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -15,16 +15,14 @@ class BookListViewItem extends StatelessWidget {
       height: 130,
       child: Row(
         children: [
-          AspectRatio(
-            aspectRatio: 2.5 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        (book.volumeInfo?.imageLinks?.thumbnail) ?? ""),
-                    fit: BoxFit.fill),
-                borderRadius:
-                    const BorderRadiusDirectional.all(Radius.circular(15)),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: AspectRatio(
+              aspectRatio: 2.8 / 4,
+              child: CachedNetworkImage(
+                fit: BoxFit.fill,
+                imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
           ),
