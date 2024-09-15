@@ -1,6 +1,7 @@
 import 'package:bookly/core/Widgets/CustomLoadingIndicator.dart';
 import 'package:bookly/core/Widgets/customErrorWidget.dart';
 import 'package:bookly/core/utilis/app_routers.dart';
+import 'package:bookly/feature/home/data/Models/book_model/book_model.dart';
 import 'package:bookly/feature/home/presentation/Manager/NewestbooksCubit/NewestBooksCubit.dart';
 import 'package:bookly/feature/home/presentation/Manager/NewestbooksCubit/NewestBooksStates.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/BookListViewItem.dart';
@@ -26,7 +27,8 @@ class BestSellerItemList extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 20.0),
                 child: GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).push(AppRouter.kBookDetailView);
+                      GoRouter.of(context).push(AppRouter.kBookDetailView,
+                          extra: state.books[index]);
                     },
                     child: BookListViewItem(book: state.books[index])),
               );
