@@ -4,7 +4,11 @@ class FeaturedBooksStates {}
 
 class FeaturedBooksInitial extends FeaturedBooksStates {}
 
-class FeaturedBooksLoading extends FeaturedBooksStates {}
+class FeaturedBooksLoading extends FeaturedBooksStates {
+  final bool isEnabeld;
+
+  FeaturedBooksLoading(this.isEnabeld);
+}
 
 class FeaturedBooksFailure extends FeaturedBooksStates {
   final String errMessage;
