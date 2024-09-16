@@ -1,5 +1,5 @@
 import 'package:bookly/core/utilis/Functions/Custom_url_launcher.dart';
-import 'package:bookly/feature/home/data/Models/book_model/book_model.dart';
+import 'package:bookly/core/Models/book_model/book_model.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/CustomButton.dart';
 import 'package:flutter/material.dart';
 
