@@ -1,10 +1,12 @@
 import 'package:bookly/core/Widgets/CustomLoadingIndicator.dart';
 import 'package:bookly/core/Widgets/customErrorWidget.dart';
+import 'package:bookly/core/utilis/app_routers.dart';
 import 'package:bookly/feature/home/presentation/Manager/featuredBooksCubit/FeaturedBooksCubit.dart';
 import 'package:bookly/feature/home/presentation/Manager/featuredBooksCubit/FeaturedBooksStates.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/HomeItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ItemsListView extends StatelessWidget {
@@ -25,8 +27,16 @@ class ItemsListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return HomeItem(
-                  book: state.books[index],
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(
+                      AppRouter.kBookDetailView,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: HomeItem(
+                    book: state.books[index],
+                  ),
                 );
               },
             ),
