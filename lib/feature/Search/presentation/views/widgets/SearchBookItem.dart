@@ -20,7 +20,7 @@ class SearchBookItem extends StatelessWidget {
               aspectRatio: 2.8 / 4,
               child: CachedNetworkImage(
                 fit: BoxFit.fill,
-                imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? "",
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
@@ -46,7 +46,7 @@ class SearchBookItem extends StatelessWidget {
                   height: 7,
                 ),
                 Text(
-                  (book.volumeInfo?.authors![0])!,
+                  (book.volumeInfo?.authors?[0]) ?? "",
                   style: Styels.textStyle14,
                 ),
                 const SizedBox(
