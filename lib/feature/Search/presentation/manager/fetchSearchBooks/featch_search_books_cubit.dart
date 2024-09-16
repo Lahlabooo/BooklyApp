@@ -9,6 +9,7 @@ class FeatchSearchBooksCubit extends Cubit<FeatchSearchBooksState> {
   FeatchSearchBooksCubit(this._serchRepoIMp)
       : super(FeatchSearchBooksInitial());
   final SearchRepoImp _serchRepoIMp;
+  List<BookModel> searchbooks = [];
   Future<void> fetchSearchBooks({required String value}) async {
     emit(FeatchSearchBooksLoading());
 
@@ -19,6 +20,7 @@ class FeatchSearchBooksCubit extends Cubit<FeatchSearchBooksState> {
       },
       (books) {
         emit(FeatchSearchBooksSuccess(books));
+        searchbooks = books;
       },
     );
   }

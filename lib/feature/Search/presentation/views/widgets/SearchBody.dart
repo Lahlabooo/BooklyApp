@@ -1,6 +1,15 @@
+import 'package:bookly/core/Models/book_model/book_model.dart';
+import 'package:bookly/core/Widgets/CustomLoadingIndicator.dart';
+import 'package:bookly/core/Widgets/customErrorWidget.dart';
 import 'package:bookly/core/utilis/Styels.dart';
+import 'package:bookly/feature/Search/presentation/manager/fetchSearchBooks/featch_search_books_cubit.dart';
 import 'package:bookly/feature/Search/presentation/views/widgets/Custom_search-TextField.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/BestSellerItemList.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/BookListViewItem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'SearchResultListView.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({super.key});
@@ -28,26 +37,6 @@ class SearchBody extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemBuilder: (context, index) {
-        return const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: SizedBox(
-              height: 20,
-              child: Text("data"),
-            ) //BookListViewItem(book: ,),
-            );
-      },
     );
   }
 }
